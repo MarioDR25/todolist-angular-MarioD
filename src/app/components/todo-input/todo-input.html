@@ -1,0 +1,8 @@
+<input
+  class="w-full h-10 border-b border-black/10 focus:outline-none text-3xl py-7"
+  placeholder="What needs to be done?"
+  type="text"
+  [value]="todoService.taskToEdit()?.label ?? ''"
+  (keyup.enter)="handleEnter(textTask.value); textTask.value = ''"
+  #textTask
+/>

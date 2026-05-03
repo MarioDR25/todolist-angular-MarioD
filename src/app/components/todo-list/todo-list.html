@@ -1,0 +1,22 @@
+@for (item of todoService.tasks(); track item.id) {
+  <div class="border-b border-black/10 text-2xl text-black/50 py-3 justify-between flex group">
+    <p>{{ item.label }}</p>
+
+    <div class="flex gap-2 items-center">
+      <fa-icon icon="pencil" size="xs" 
+        class="text-blue-400 opacity-0 group-hover:opacity-100 duration-500 cursor-pointer" 
+        (click)="onEditTask(item)">
+      </fa-icon>
+      
+      <fa-icon icon="x" size="xs" 
+        class="text-red-400 opacity-0 group-hover:opacity-100 duration-500 cursor-pointer" 
+        (click)="onRemoveTask(item.id)">
+      </fa-icon>
+
+      <fa-icon icon="circle-check" size="xs"
+        class="{{item.is_done ? 'text-green-400' : 'text-gray-300 opacity-0 group-hover:opacity-100 duration-500'}} cursor-pointer"
+        (click)="onToggleDone(item)">
+      </fa-icon>
+    </div>
+  </div>
+}
