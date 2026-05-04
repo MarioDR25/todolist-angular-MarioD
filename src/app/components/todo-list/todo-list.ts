@@ -27,7 +27,6 @@ export class TodoList {
   }
 
   onEditTask(item: Task) {
-    // Guardamos el item completo para saber qué id editar
     this.todoService.setTaskToEdit(item);
   }
 }
